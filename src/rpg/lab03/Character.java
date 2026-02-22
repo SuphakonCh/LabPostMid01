@@ -5,7 +5,7 @@ public class Character {
     private int level;
     private int healthPoints;
     private int maxHealthPoint;
-    private int defense; // [Requirement] เพิ่ม Defense
+    private int defense;
     private Weapon weapon;
     private String characterClass;
     private int damage;
@@ -35,10 +35,10 @@ public class Character {
     public void attack(Character target) {
         System.out.println("\n" + name + " (" + characterClass + ") attacks " + target.getName() + " with " + weapon.getName() + "!");
         System.out.println("   Raw Attack Damage: " + damage);
-        target.takeDamage(this.damage);
+        target.receiveDamage(this.damage);
     }
 
-    public void takeDamage(int incomingDamage) {
+    public void receiveDamage(int incomingDamage) {
         System.out.println("   " + name + "'s Defense: " + defense + " (reduces damage by " + defense + ")");
 
         int actualDamage = incomingDamage - defense;
@@ -81,5 +81,14 @@ public class Character {
     }
     public int getLevel() {
         return level;
+    }
+    public int getDamage() {
+        return damage;
+    }
+    public String getCharacterClass() {
+        return characterClass;
+    }
+    public Weapon getWeapon() {
+        return weapon;
     }
 }
