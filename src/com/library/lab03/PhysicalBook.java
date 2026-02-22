@@ -18,7 +18,12 @@ public class PhysicalBook extends LibraryItem {
 
     @Override
     public void displayDetails() {
+        System.out.println("PHYSICAL BOOK");
         super.displayDetails();
-        System.out.println(" shelfLocation " + this.shelfLocation);
+        System.out.println(" - Shelf Location:  " + this.shelfLocation);
+    }
+    @Override
+    public double calculateLateFee(int daysLate) {
+        return daysLate * 5.0;
     }
 }

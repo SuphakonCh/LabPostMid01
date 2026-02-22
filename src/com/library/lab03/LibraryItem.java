@@ -2,7 +2,7 @@ package com.library.lab03;
 
 import java.time.LocalDate;
 
-public class LibraryItem {
+public abstract class LibraryItem {
     private String name;
     private double price;
     private String author;
@@ -55,9 +55,7 @@ public class LibraryItem {
         System.out.println("   Book \"" + name + "\" has been returned successfully.");
     }
 
-    public double calculateLateFee(int dayslate){
-        return 0;
-    }
+    public abstract double calculateLateFee(int dayslate);
 
     public String getName() {
         return name;

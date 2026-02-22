@@ -4,7 +4,7 @@ public class EBook extends LibraryItem {
     private String downloadUrl;
     private  double fileSize;
 
-    public EBook(String name, String author, String isbn,String downloadUrl,double fileSize) {
+    public EBook(String name, String author, String isbn, String downloadUrl, double fileSize) {
         super(name, author, isbn, 0.0, "Available");
         this.downloadUrl = downloadUrl;
         this.fileSize = fileSize;
@@ -28,9 +28,14 @@ public class EBook extends LibraryItem {
     }
     @Override
     public void displayDetails() {
+        System.out.println("E-BOOK");
         super.displayDetails();
         System.out.println(" Download URL " + this.downloadUrl);
         System.out.println(" File Size " + this.fileSize);
 
+    }
+    @Override
+    public double calculateLateFee(int daysLate) {
+        return 0.0; // E-Book ไม่มีค่าปรับ (ไฟล์หมดอายุอัตโนมัติ)
     }
 }
