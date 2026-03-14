@@ -1,4 +1,4 @@
-package rpg.lab04;
+package rpg.lab06;
 
 public class HealthPotion implements Consumable {
     private String name;
